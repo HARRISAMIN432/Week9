@@ -14,18 +14,18 @@ main()
 int commonCharacters(string s1, string s2)
 {
     int commonCharactersCount = 0;
-    string commonCharacters;
-    bool found;
-    for (int i = 0; s1[i] != '\0'; i++)
+    int count_s1 = 0 , count_s2 = 0 ;
+    for(int i = 0 ; s1[i] != '\0' ; i++) count_s1++ ;
+    for(int i = 0 ; s2[i] != '\0' ; i++) count_s2++ ;
+       for (int i = 0; i < count_s1 || i < count_s2 ; i++)
     {
-        for (int j = 0; s2[j] != '\0'; j++)
+        for (int j = 0; j < count_s2 ; j++)
         {
             if (s1[i] == s2[j])
-            {
+            {                                                                                            
                 commonCharactersCount++;
-                commonCharacters += s1[i];
-                s2[j] = '\0';
-                break;
+                s2[j] = '|';
+                break ;
             }
         }
     }
